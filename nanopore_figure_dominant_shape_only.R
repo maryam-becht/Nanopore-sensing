@@ -1,31 +1,4 @@
-# ============================================================
-# ONE PEPTIDE FOLDER AT A TIME
-# Final version: panel e = dominant event shape
-#
-# What panel e shows:
-#   - filter events with dwell >= 0.5 ms and Ires <= 85%
-#   - compare waveform SHAPES across filtered events
-#   - identify the most frequent shape family
-#   - display a light-grey overlay of that dominant family
-#   - display the median dominant shape in black
-#
-# Expected structure in one peptide folder:
-#   peptide_name/
-#     peptide_P1_nanopore_R_data.xlsx
-#     peptide_P1_nanopore_R_data_event_shapes.csv
-#     peptide_P2_nanopore_R_data.xlsx
-#     peptide_P2_nanopore_R_data_event_shapes.csv
-#     ...
-#
-# Output:
-#   peptide_name_R_folder_output/
-#     peptide_name_dominant_shape_only.png
-#     peptide_name_dominant_shape_summary.csv
-# ============================================================
 
-# ============================================================
-# 0. PACKAGES
-# ============================================================
 
 required_packages <- c(
   "openxlsx",
