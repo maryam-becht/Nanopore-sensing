@@ -1,30 +1,3 @@
-# ============================================================
-# TOUS LES PEPTIDES :
-# FACETED + OVERLAY
-# I/I0 0–100 % ET I/I0 0–70 %
-#
-# Structure attendue :
-#
-# C:/Users/mbech/Documents/Peptides/
-#
-#   asynpS87/
-#     asynpS87_P1_nanopore_R_data.xlsx
-#     asynpS87_P2_nanopore_R_data.xlsx
-#     ...
-#
-#   taupThr217/
-#     taupThr217_P1_nanopore_R_data.xlsx
-#     taupThr217_P2_nanopore_R_data.xlsx
-#     ...
-#
-# Un fichier Excel = un pore
-# Les événements sont dans la feuille "events"
-# ============================================================
-
-
-# ============================================================
-# 0. PACKAGES
-# ============================================================
 
 required_packages <- c(
   "openxlsx",
