@@ -1,27 +1,3 @@
-# ============================================================
-# TABLE QUI CORRESPOND EXACTEMENT AUX FIGURES
-# ============================================================
-#
-# IMPORTANT :
-# Cette table reproduit exactement la logique du script de figure :
-#
-#   dwell_total_ms >= 0.2
-#   dwell_total_ms <= 100
-#   I_over_I0_pct >= 0
-#   I_over_I0_pct <= 100
-#   garder les pores avec n_events_plotted >= 100
-#
-# Le numero/label du pore correspond EXACTEMENT au P1, P2, P3...
-# affiche sur la figure, car il est extrait du nom du fichier comme
-# dans le script de figure.
-#
-# Un dossier peptide a la fois, exactement comme le script de figure.
-# ============================================================
-
-
-# ============================================================
-# 0. PACKAGES
-# ============================================================
 
 required_packages <- c(
   "openxlsx",
