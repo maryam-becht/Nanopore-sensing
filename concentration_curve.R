@@ -1,9 +1,3 @@
-# ============================================================
-# NANOpore CONCENTRATION CURVE
-# AT8 P1
-# 200 pM -> 1 nM -> 50 nM -> 100 nM -> 500 nM -> 1 uM
-# ============================================================
-
 library(readxl)
 library(dplyr)
 library(ggplot2)
@@ -54,14 +48,7 @@ cat("Last event:",
 # ============================================================
 # 4. CONCENTRATION WINDOWS
 # ============================================================
-#
-# APPROXIMATION:
-# recording ~300 s
-# 6 concentrations
-# ~50 s per concentration
-#
-# CHANGE THESE TIMES if you remember the real additions.
-# ============================================================
+
 
 windows <- data.frame(
   
