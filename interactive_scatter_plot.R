@@ -1,15 +1,4 @@
-# ============================================================
-# NANOPORE EVENT EXPLORER
-#
-# X = I/I0 (%)
-# Y = Dwell time (ms, log scale)
-#
-# Click on a scatter point -> display exact event shape
-# ============================================================
 
-# ============================================================
-# PACKAGES
-# ============================================================
 
 library(shiny)
 library(plotly)
@@ -269,7 +258,6 @@ server <- function(input, output, session) {
   
   # ==========================================================
   # FILTER EVENTS
-  # use real data limits with a tiny tolerance
   # ==========================================================
   
   filtered_events <- reactive({
