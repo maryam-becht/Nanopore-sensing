@@ -1,46 +1,27 @@
-# ================================================================
-# OVERLAY SCATTER PLOTS — tous les pores, une figure par peptide
-# Axe x : dwell time (ms), echelle logarithmique
-# Axe y : I/I0 en pourcentage
-# Structure attendue : Peptides/nom_du_peptide/un_fichier_Excel_par_pore
-# ================================================================
 
-# ---------------------------
-# 1. PARAMETRES A MODIFIER
-# ---------------------------
-
-# Dossier contenant les fichiers Excel.
-# Le script cherche aussi dans les sous-dossiers.
 DATA_DIR <- "C:/Users/mbech/Documents/Peptides"
 
-# Dossier de sortie cree automatiquement dans DATA_DIR.
+
 OUTPUT_DIR <- file.path(DATA_DIR, "Scatter_overlay_all_pores")
 
-# Limites utilisees pour la figure.
+
 MIN_DWELL_MS <- 0.5
 MAX_DWELL_MS <- 100
 MIN_I_OVER_I0 <- 0.00
 MAX_I_OVER_I0 <- 1.00  # mettre 0.70 pour une figure limitee a 70 %
 
-# Apparence.
+
 POINT_SIZE <- 0.55
 POINT_ALPHA <- 0.40
 SHOW_PEPTIDE_TITLE <- FALSE
 PNG_DPI <- 300
 
-# Inf = tous les evenements sont affiches.
-# Si le rendu est trop lent, essayer 50000 : cela echantillonne seulement
-# l'affichage, sans modifier les fichiers Excel ni le tableau de comptage.
 MAX_POINTS_PER_PORE <- Inf
 
-# Si une colonne de dwell time sans unite explicite est rencontree,
-# elle sera interpretee ainsi. "duration" seul est reconnu comme secondes.
+
 DEFAULT_DWELL_UNIT <- "ms"  # choix possibles : "ms", "s", "us"
 
 
-# ---------------------------
-# 2. PACKAGES
-# ---------------------------
 
 required_packages <- c("readxl", "ggplot2")
 missing_packages <- required_packages[
@@ -59,9 +40,6 @@ if (length(missing_packages) > 0) {
 }
 
 
-# ---------------------------
-# 3. FONCTIONS UTILITAIRES
-# ---------------------------
 
 clean_colnames <- function(x) {
   x <- iconv(x, from = "", to = "ASCII//TRANSLIT")
@@ -397,7 +375,7 @@ make_overlay_plot <- function(data, peptide_name) {
   plot_data <- sample_for_display(data)
   
   pore_levels <- levels(data$pore)
-  # Palette douce, compatible daltonisme, sans jaune fluorescent.
+
   article_palette <- c(
     "#4E79A7",  # bleu doux
     "#E07B62",  # corail doux
