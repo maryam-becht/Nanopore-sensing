@@ -1,27 +1,3 @@
-"""
-Nanopore event detection v33: one Excel workbook per pore, prepared for R.
-
-Expected input layout
----------------------
-DATA_ROOT/
-    Data_001_..._aHL_tauThr217/
-        recording.abf
-        IV Curve/             <- never scanned
-        other channels/       <- never scanned
-        baseline/             <- never scanned
-    Data_002_..._aHL_AT8/
-        recording.abf
-
-Every immediate child directory of DATA_ROOT that contains at least one ABF
-directly inside it is treated as one physical pore. The script never searches
-recursively. Pores are grouped into peptide output folders, but every physical
-pore receives its own Excel workbook directly inside the peptide folder.
-Python creates no plots, CSV files, or per-pore output directories.
-
-The event detector and output filters preserve the settings from v31. A
-deterministically selected 2 s current segment is also exported for every pore
-as a trace_Pn worksheet for later plotting in R.
-"""
 
 from __future__ import annotations
 
