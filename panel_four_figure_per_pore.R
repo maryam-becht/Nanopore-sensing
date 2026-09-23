@@ -1,29 +1,3 @@
-# ============================================================
-# ONE PEPTIDE FOLDER AT A TIME
-#
-# Expected structure:
-#   Documents/Peptides/asynpS87/
-#     asynpS87_P1_nanopore_R_data.xlsx
-#     asynpS87_P2_nanopore_R_data.xlsx
-#     asynpS87_P3_nanopore_R_data.xlsx
-#     ...
-#
-# Each Excel file = one physical pore.
-# The script:
-#   - asks you to select ONE peptide folder
-#   - reads all Excel files inside that folder
-#   - treats each file as one pore
-#   - combines them into one figure
-#   - saves one PNG + summary CSV files
-#
-# No PDF.
-# No mclust.
-# ============================================================
-
-
-# ============================================================
-# 0. PACKAGES
-# ============================================================
 
 required_packages <- c(
   "openxlsx",
